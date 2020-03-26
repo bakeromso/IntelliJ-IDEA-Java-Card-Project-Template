@@ -10,7 +10,7 @@ Setup
 1.	Open project using IDEA’s `File` -> `Open project`
 1.	Go to `Project` -> `Project Structure` -> `SDKs` and add SDK you installed on step 1. If there is already something, you can delete it before adding newly installed SDK
 1. Download the Java Card Development Kit [here](https://www.oracle.com/java/technologies/java-archive-downloads-javame-downloads.html). Find the version of your Java Card and download that version's Development Kit. Note: Do not confuse this with the version of the Global Platform on your card.
-1.	Go to `File` -> `Project Structure` -> `Libraries`. Remove current Classes entry. Then add from the Development Kit downloaded in the previous step `java_card_kit_2.x.x\lib\api.jar.
+1.	Go to `File` -> `Project Structure` -> `Libraries`. Remove current Classes entry. Then add from the Development Kit downloaded in the previous step `java_card_kit_2.x.x\lib\api.jar'.
 1.	Click on the `helloWorld`` package in the Project view and press Shift-F6 to rename it to the name you like. The same goes to `HelloWorld` applet.
 1.	Open `Common.properties`` file and setup everything you need there according to comments, including path to Development Kit installation folder. Uncomment/comment entries, that control which card platform is the target.
 1.	Open `build.xml` (this is an [`Ant`](http://ant.apache.org/) build package so you need `Ant` plugin to be installed in IDEA) and correct entries, that follow `${APPLETAIDPREFIX}` to suit your AID.
