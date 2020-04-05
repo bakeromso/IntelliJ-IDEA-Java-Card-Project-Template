@@ -27,6 +27,21 @@
         <generate_applet_bin_std PACKAGENAMEUNPACKAGED="helloWorld" APPLETNAME="HelloWorld"/>
     </target>
 
+    <target name="uninstall" depends="binarize.all.standard">
+        <java jar="${GP_HOME}/gp.jar" fork="true">
+            <arg value="--uninstall"/>
+            <arg value="${OUTPUT_DIR}/helloWorld/javacard/helloWorld.cap"/>
+        </java>
+    </target>
+
+    <target name="install" depends="uninstall">
+        <java jar="${GP_HOME}/gp.jar" fork="true">
+            <arg value="--default"/>
+            <arg value="--install"/>
+            <arg value="${OUTPUT_DIR}/helloWorld/javacard/helloWorld.cap"/>
+        </java>
+    </target>
+
 <!--    <target name="binarize.all.egate" depends="verifycap.all">-->
 <!--        <generate_applet_bin_egate PACKAGENAMEUNPACKAGED="helloWorld" MODULENAME="HelloWorld"/>-->
 <!--    </target>-->

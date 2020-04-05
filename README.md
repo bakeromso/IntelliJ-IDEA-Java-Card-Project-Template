@@ -26,6 +26,8 @@ you can delete it before adding newly installed SDK.
  downloaded in the previous step `java_card_kit_2.x.x\lib\api.jar`.
 1.	Click on the `helloWorld` package in the Project view and press Shift-F6 to rename it to the name you like. The 
 same goes to `HelloWorld` applet.
+1.  Download latest GlobalPlatformPro from [here](https://github.com/martinpaljak/GlobalPlatformPro/releases), or use 
+the version provided in this repo.
 1.	Open `Common.properties` file and setup everything you need there according to comments, including path to Java Card
 Development Kit installation folder. Uncomment/comment entries, that control which card platform is the target.
 1.	Open `build.xml` (this is an [`Ant`](http://ant.apache.org/) build package so you need `Ant` plugin to be installed
@@ -83,9 +85,9 @@ This is the intended behaviour of the HelloWorld applet. So this output indicate
 1. Go to tab `GlobalPlatform` and sub-tab `Package`. Hit `Refresh`
 1. Select the package you want to remove and hit `Remove` or `Remove All`.
 
-## Managing cards from commandline (windows)
+## Managing cards from commandline (Windows)
 Get the latest version of GlobalPlatformPro from [here](https://github.com/martinpaljak/GlobalPlatformPro/releases).
-I decided to go with the gp.jar version. 
+or use the version provided in this repo. I decided to go with the gp.jar version. 
 1. Open a command prompt and set a variable for your .cap output directory. <br>
 `set OUTPUT_DIR=C:\Users\user\workspace\project\out\helloWorld\javacard`
 1. Navigate to the location where you placed the gp.jar file.
@@ -150,8 +152,8 @@ java -jar gp.jar -delete DEADBEEF313210
 ```
 ### Communicating with the applet
 Through GlobalPlatformPro it is possible to send raw APDU commands so that we can talk with the applet. However 
-I did not manage to get this to work with GlobalPlatformPro, which is why I used [apdu4j](https://github.com/martinpaljak/apdu4j/releases)
-for this.
+I did not manage to get this to work with GlobalPlatformPro, which is why I used apdu4j for this. You can get the 
+ latest version [here](https://github.com/martinpaljak/apdu4j/releases), or use the version from the repo.
 #### Communicating through apdu4j
 Navigate to the location where you placed the apdu4j.jar file. <br>
 Find the name of your reader
