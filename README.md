@@ -38,6 +38,8 @@ Development Kit installation folder. Uncomment/comment entries, that control whi
 1.	To build applet, use [`Ant`](http://ant.apache.org/) window on the right of the screen and double click
  `binarize.all.standard`.
 1.	Target files will be in the `\out\helloWorld\javacard` folder where `helloWorld` is your package name
+1.  The output files can be build and installed in one go by clicking the `install` option
+in your Ant view.
 
 If you have more than one applet in the project, edit build.xml and add a second entry under each <target> tag with the 
 info you need.
