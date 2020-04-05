@@ -214,3 +214,6 @@ A<< (0000+2) (24ms) 6D00
 ```
 This is `6D00` is not the reply what we were hoping for. Closer inspection shows that our message is prepended
 with `34303000 0C` which is probably the reason we are not getting the intended reply.
+
+# Debugging
+To be done using [this](https://www.javacardos.com/tools/pyresman) tool
