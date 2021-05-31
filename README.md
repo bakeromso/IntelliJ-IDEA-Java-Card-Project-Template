@@ -91,6 +91,7 @@ or use the version provided in this repo. I decided to go with the gp.jar versio
 1. Open a command prompt and set a variable for your .cap output directory. <br>
 `set OUTPUT_DIR=C:\Users\user\workspace\project\out\helloWorld\javacard`
 1. Navigate to the location where you placed the gp.jar file.
+
 ### Listing installed packages and applets
 Execute the following to list installed packages and applets:
 ```
