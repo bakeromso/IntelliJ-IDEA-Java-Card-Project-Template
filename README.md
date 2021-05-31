@@ -75,6 +75,7 @@ Download Cap successful.
 1. Select the tab `Basic APDU` at the bottom.
 1. In the box `Data` below `CLA` fill in some hexadecimal string and hit the button `Send`. In the case that the box
 `Data` contains `AA BB CC DD` then in the box `Basic APDU` it will say
+
 ```
 <<30 30 00 00 04 AA BB CC DD
 >>AA BB CC DD 90 00
@@ -90,7 +91,7 @@ Get the latest version of GlobalPlatformPro from [here](https://github.com/marti
 or use the version provided in this repo. I decided to go with the gp.jar version. 
 1. Open a command prompt and set a variable for your .cap output directory. <br>
 `set OUTPUT_DIR=C:\Users\user\workspace\project\out\helloWorld\javacard`
-1. Navigate to the location where you placed the gp.jar file.
+1. Navigate to the location where you placed the `gp.jar` file.
 
 ### Listing installed packages and applets
 Execute the following to list installed packages and applets:
@@ -215,10 +216,12 @@ The first command is to select the applet on the card, the second one is to send
 These commands are copied from the `Basic APDU` box in the PyApduTool when selecting an applet and sending 
 `AABBCCDD` to the card.
 The last part of the reply is as follows.
+
 ```
 A>> T=1 (4+0012) 34303000 0C AABBAAAA590585631A8DE076
 A<< (0000+2) (24ms) 6D00
 ```
+
 This is `6D00` is not the reply what we were hoping for. Closer inspection shows that our message is prepended
 with `34303000 0C` which is probably the reason we are not getting the intended reply.
 
