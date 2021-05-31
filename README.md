@@ -1,13 +1,11 @@
-IntelliJ IDEA JavaCard Project Template
-=====================================
+## Introduction
 
 This is a template project for Java Card development using [IntelliJ IDEA IDE](https://www.jetbrains.com/idea/).
 This tutorial is optimised for working with cards handed out by the Radboud University Nijmegen for the course 
 Hardware Security. Cards with similar properties can also be used, like [this](https://www.smartcardfocus.com/shop/ilp/id~712/javacos-a22-dual-interface-java-card-150k/p/index.shtml)
 one.
 
-Setup
-=====================================
+## Setup
 
 1.	Install latest 1.8.x Java SDK from [here](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
  (Java SE 8 Update xx JDK). Java 1.6 and lower are incompatible with current Ant version in IntelliJ. If using other 
@@ -44,7 +42,7 @@ in your Ant view.
 If you have more than one applet in the project, edit build.xml and add a second entry under each <target> tag with the 
 info you need.
 
-# Interfacing with the Card
+## Interfacing with the Card
 
 _**Important: Default keys are assumed when interfacing with the cards. Make sure that your card uses the default keys 
  before proceeding. Communicating with the wrong keys might brick the card.**_
@@ -122,6 +120,7 @@ Let's check the installed applet by listing the card's contents
 java -jar gp.jar -list
 ```
 Now giving the output:
+ 
 ```
 Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
 ISD: A000000003000000 (OP_READY)
@@ -134,6 +133,7 @@ PKG: DEADBEEF313210 (LOADED)
      Version: 1.0
      Applet:  DEADBEEF31321001
 ```
+
 The package `DEADBEEF313210` is installed with the applet `DEADBEEF31321001`.
 ### Removing an applet
 Applets can be removed in multiple ways. The easiest way is by using `-uninstall` from GlobalPlatformPro. This
@@ -204,10 +204,12 @@ java -jar apdu4j.jar -r "ACS ACR122U PICC Interface 0" -d apdu 00a4040008DEADBEE
 #### More info on the attempt in GlobalPlatformPro
 Through GlobalPlatformPro it would be possible to send raw commands with the `-s` flag. Add the `-d` flag to see
 the actually transmitted commands. `A>>>` indicates what was send to the card and `A<<<` the card's reply.
+ 
 ```
 java -jar gp.jar -s 00A4040008DEADBEEF3132100100
 java -jar gp.jar -d -s 3030300004AABBCCDD
 ```
+ 
 The first command is to select the applet on the card, the second one is to send the data `AABBCCDD` to the card. 
 These commands are copied from the `Basic APDU` box in the PyApduTool when selecting an applet and sending 
 `AABBCCDD` to the card.
